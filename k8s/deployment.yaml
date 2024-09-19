@@ -16,4 +16,13 @@ spec:
       - name: python-app
         image: manigowtham08/testing:latest
         ports:
-        - containerPort: 8000  # Adjust based on your app's port
+        - containerPort: 8000
+          env:
+            - name: DB_USER
+              value: "root"  # MySQL root user
+            - name: DB_PASSWORD
+              value: "root"  # MySQL root password
+            - name: DB_HOST
+              value: "mysql-service"  # MySQL service name
+            - name: DB_DATABASE
+              value: "mydb"  
